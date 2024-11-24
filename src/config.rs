@@ -38,6 +38,10 @@ pub enum DeviceSelector {
     Unique {
         unique: String,
     },
+    Bus {
+        bus: String,
+        device_group: String,
+    },
 }
 
 pub fn read_config<P: AsRef<Path> + Debug + ToString>(path: P) -> Result<SelfConfig, ConfigError> {

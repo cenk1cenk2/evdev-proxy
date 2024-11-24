@@ -30,6 +30,10 @@ fn selector_by_config(s: &config::DeviceSelector) -> Box<dyn udevdetect::DevFilt
         config::DeviceSelector::Unique { unique } => {
             Box::new(udevdetect::UniqueFilter::new(unique.clone()))
         }
+        config::DeviceSelector::Bus { bus, device_group } => Box::new(udevdetect::BusFilter::new(
+            bus.clone(),
+            device_group.clone(),
+        )),
     }
 }
 

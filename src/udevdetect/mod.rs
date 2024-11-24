@@ -3,6 +3,7 @@ use std::ffi::OsStr;
 use udev::{Device, Event};
 
 pub use self::filter::DevFilter;
+pub use self::filter_bus::BusFilter;
 pub use self::filter_unique::UniqueFilter;
 pub use self::filter_usbid::USBIDFilter;
 pub use self::filter_usbidclass::USBHIDClass;
@@ -12,6 +13,7 @@ pub use self::listener::DevEventType;
 pub use self::listener::DevListener;
 
 mod filter;
+mod filter_bus;
 mod filter_unique;
 mod filter_usbid;
 mod filter_usbidclass;
