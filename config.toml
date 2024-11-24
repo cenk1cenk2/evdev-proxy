@@ -29,6 +29,8 @@ log_level = "INFO"
 #                      with single receiver (e.g. Logitech Unifying Receiver)
 #      * Unique     -- Simple selector that blindly selects any device based
 #                      on it's unique identificator and device
+#      * Bus        -- Simple selector that blindly selects any device based
+#                      on it's bus and input path
 #
 # Example devices:
 #[[device]]
