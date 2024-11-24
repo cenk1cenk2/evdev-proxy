@@ -3,8 +3,8 @@ use std::path::Path;
 use config::{Config, ConfigError, File};
 use serde::export::fmt::Debug;
 
-use super::udevdetect::USBHIDClass;
 use super::proxydev::SimpleDeviceClass;
+use super::udevdetect::USBHIDClass;
 
 #[derive(Debug, Deserialize)]
 pub struct SelfConfig {
@@ -26,14 +26,17 @@ pub enum Device {
 
 #[derive(Debug, Deserialize)]
 pub enum DeviceSelector {
-    USBID{
+    USBID {
         vendor: u16,
-        model: u16
+        model: u16,
     },
-    USBIDClass{
+    USBIDClass {
         vendor: u16,
         model: u16,
         class: USBHIDClass,
+    },
+    Unique {
+        unique: String,
     },
 }
 
@@ -43,4 +46,3 @@ pub fn read_config<P: AsRef<Path> + Debug + ToString>(path: P) -> Result<SelfCon
     c.merge(File::from(path.as_ref()))?;
     c.try_into()
 }
-

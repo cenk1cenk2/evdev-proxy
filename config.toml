@@ -27,6 +27,8 @@ log_level = "INFO"
 #                      on it's usb vendor:model identificator and device 
 #                      class (Mouse/Keyboard), useful for wireless devices
 #                      with single receiver (e.g. Logitech Unifying Receiver)
+#      * Unique     -- Simple selector that blindly selects any device based
+#                      on it's unique identificator and device
 #
 # Example devices:
 #[[device]]
